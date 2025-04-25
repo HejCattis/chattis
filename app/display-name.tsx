@@ -29,7 +29,7 @@ const DisplayName = () => {
             placeholderTextColor="#666"
             value={name}
             onChangeText={setName}
-            autoCapitalize="none"
+            autoCapitalize="words"
             autoCorrect={false}
           />
         </View>

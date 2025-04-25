@@ -57,6 +57,7 @@ const styles = StyleSheet.create({
   messageHeader: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    gap: 12,
     marginBottom: 4,
   },
   sender: {
