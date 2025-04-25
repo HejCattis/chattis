@@ -3,7 +3,7 @@ import { View, StyleSheet } from 'react-native';
 import Header from '../components/layout/Header';
 import { UserProvider } from '../context/UserContext';
 
-export default function RootLayout() {
+const RootLayout = () => {
   return (
     <UserProvider>
       <View style={styles.container}>
@@ -26,3 +26,5 @@ const styles = StyleSheet.create({
     paddingTop: 60,
   },
 });
+
+export default RootLayout;

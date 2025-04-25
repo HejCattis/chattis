@@ -2,7 +2,7 @@ import { Text, View, StyleSheet } from "react-native";
 import { useRouter } from "expo-router";
 import Button from "../components/common/Button";
 
-export default function Index() {
+const Index = () => {
   const router = useRouter();
 
   return (
@@ -71,3 +71,5 @@ const styles = StyleSheet.create({
     fontStyle: "italic",
   },
 });
+
+export default Index;

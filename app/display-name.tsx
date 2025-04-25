@@ -4,7 +4,7 @@ import { useState } from "react";
 import Button from "../components/common/Button";
 import { useUser } from "../context/UserContext";
 
-export default function DisplayName() {
+const DisplayName = () => {
   const router = useRouter();
   const [name, setName] = useState("");
   const { setDisplayName } = useUser();
@@ -87,3 +87,5 @@ const styles = StyleSheet.create({
     width: "100%",
   },
 }); 
+
+export default DisplayName;
