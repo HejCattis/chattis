@@ -11,6 +11,12 @@ A real-time chat application built with React Native and Firebase.
 - Automatic scrolling to newest messages
 - Loading indicators for better UX
 
+## Screenshots
+
+![Chat Screen](assets/images/screen1.PNG)
+![Display Name Screen](assets/images/screen2.PNG)
+![Chat Interface](assets/images/screen3.PNG)
+
 ## Getting Started
 
 1. Install dependencies:
