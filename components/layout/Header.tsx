@@ -1,4 +1,4 @@
-import { View, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import { View, StyleSheet, Pressable, Image } from 'react-native';
 import { usePathname, useRouter } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -11,12 +11,15 @@ export default function Header() {
     <View style={styles.header}>
       <View style={styles.leftContainer}>
         {showBackButton && (
-          <TouchableOpacity 
+          <Pressable 
             onPress={() => router.back()} 
-            style={styles.backButton}
+            style={({ pressed }) => [
+              styles.backButton,
+              pressed && styles.backButtonPressed
+            ]}
           >
             <Ionicons name="chevron-back" size={24} color="#000" />
-          </TouchableOpacity>
+          </Pressable>
         )}
       </View>
       
@@ -52,6 +55,9 @@ const styles = StyleSheet.create({
   },
   backButton: {
     padding: 8,
+  },
+  backButtonPressed: {
+    opacity: 0.7,
   },
   logo: {
     width: 100,

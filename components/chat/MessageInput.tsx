@@ -1,4 +1,4 @@
-import { View, StyleSheet, TextInput, TouchableOpacity, Platform } from 'react-native';
+import { View, StyleSheet, TextInput, Pressable, Platform } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useState } from 'react';
 
@@ -29,10 +29,11 @@ export default function MessageInput({ onSend }: MessageInputProps) {
           maxLength={500}
           textAlignVertical="center"
         />
-        <TouchableOpacity 
-          style={[
+        <Pressable 
+          style={({ pressed }) => [
             styles.sendButton,
-            !message.trim() && styles.sendButtonDisabled
+            !message.trim() && styles.sendButtonDisabled,
+            pressed && styles.sendButtonPressed
           ]} 
           onPress={handleSend}
           disabled={!message.trim()}
@@ -42,7 +43,7 @@ export default function MessageInput({ onSend }: MessageInputProps) {
             size={24} 
             color={message.trim() ? "#175ADB" : "#999"} 
           />
-        </TouchableOpacity>
+        </Pressable>
       </View>
     </View>
   );
@@ -82,5 +83,8 @@ const styles = StyleSheet.create({
   },
   sendButtonDisabled: {
     backgroundColor: '#F2F2F7',
+  },
+  sendButtonPressed: {
+    opacity: 0.7,
   },
 }); 
