@@ -46,7 +46,7 @@ return (
         renderItem={({ item }) => (
           <MessageBubble
             text={item.text}
-            sender={item.sender}
+            sender={item.sender.charAt(0).toUpperCase() + item.sender.slice(1)}
             timestamp={item.timestamp.toLocaleTimeString(['sv-SE'], {
               hour: '2-digit',
               minute: '2-digit',
